@@ -1,3 +1,5 @@
+package org.email;
+
 class EmailUtils {
     def sendEmail(recipientsList,subject, mimeType, body,attachFilePath) {
 	    println("attachement file path=$attachFilePath")
