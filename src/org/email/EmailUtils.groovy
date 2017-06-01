@@ -10,12 +10,12 @@ class EmailUtils {
 					to: recipientsList.join(",")
     }
 
-    def getEmailSubject( status) {
-		 return  " $status : $PROJ_NAME - ${GIT_HASH} - ${env.JOB_NAME} - ${env.BUILD_NUMBER} " 
+    def getEmailSubject( status,proj_name,git_hash) {
+		 return  " $status : $proj_name - $git_hash - ${env.JOB_NAME} - ${env.BUILD_NUMBER} " 
     }
 
-    def getEmailBody( status) {
-	    println( "'${env.JOB_NAME} - ${env.BUILD_NUMBER} - ${GIT_HASH}'" )
-        return "<p> $status: Job '${env.JOB_NAME} - ${env.BUILD_NUMBER} - ${GIT_HASH}':</p> <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"
+    def getEmailBody( status,git_hash) {
+	    println( "'${env.JOB_NAME} - ${env.BUILD_NUMBER} - $git_hash'" )
+        return "<p> $status: Job '${env.JOB_NAME} - ${env.BUILD_NUMBER} - $git_hash':</p> <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"
     }
 }
