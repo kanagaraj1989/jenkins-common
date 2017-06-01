@@ -11,8 +11,7 @@ class EmailUtils {
     }
 
     def getEmailSubject( status) {
-		return "This is kanagaraj. Welcome to new world."
-	    //return  " $status : $PROJ_NAME - ${GIT_HASH} - ${env.JOB_NAME} - ${env.BUILD_NUMBER} " 
+		 return  " $status : $PROJ_NAME - ${GIT_HASH} - ${env.JOB_NAME} - ${env.BUILD_NUMBER} " 
     }
 
     def getEmailBody( status) {
