@@ -27,10 +27,10 @@ class EmailUtils implements Serializable  {
 
     def sendEmail(recipientsList,attachFilePath) {
 	    println("attachement file path=$attachFilePath")
-		emailext 	attachmentsPattern: attachFilePath, 
+		this.script.emailext  attachmentsPattern: attachFilePath, 
 					body: this.body, 
 					mimeType: this.mimeType, 
-					subject: this.subject, 
+					subject: this.subject,  
 					to: recipientsList.join(",")
     }
 
